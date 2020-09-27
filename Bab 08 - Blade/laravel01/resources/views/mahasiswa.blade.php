@@ -12,9 +12,15 @@
     <h1 class="bg-dark px-3 py-1 text-white d-inline-block">{{$nama}}</h1>
     <br>
     @foreach($nilai as $val)
-    <div class="alert alert-info d-inline-block">
-      {{ $val }}
-    </div>
+      @if (($val >= 0) and ($val < 50))
+        <div class="alert alert-danger d-inline-block">
+          {{ $val }}
+        </div>
+      @elseif (($val >= 50) and ($val <= 100))
+        <div class="alert alert-success d-inline-block">
+          {{ $val }}
+        </div>
+      @endif
     @endforeach
   </div>
 </body>
