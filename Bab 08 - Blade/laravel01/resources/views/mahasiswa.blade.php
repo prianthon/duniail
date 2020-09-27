@@ -11,7 +11,7 @@
   <div class="container text-center mt-3 pt-3 bg-white">
     @for($i = 0;$i < 5;$i++)
     <div class="alert alert-info d-inline-block">
-      Laravel
+      {{ $i }}
     </div>
     @endfor
   </div>
