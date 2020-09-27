@@ -9,11 +9,13 @@
 </head>
 <body>
   <div class="container text-center mt-3 pt-3 bg-white">
-    @for($i = 0;$i < 5;$i++)
+    <?php $i = 0; ?>
+    @while($i < 5)
     <div class="alert alert-info d-inline-block">
       {{ $i }}
     </div>
-    @endfor
+    <?php $i++ ?>
+    @endwhile
   </div>
 </body>
 </html>
