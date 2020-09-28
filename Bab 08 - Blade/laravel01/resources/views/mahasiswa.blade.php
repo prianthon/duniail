@@ -21,6 +21,9 @@
       </div>
     @endforeach
     --}}
+    @php
+      var_dump($nilai);
+    @endphp
   </div>
 </body>
 </html>
