@@ -18,6 +18,9 @@
         @slot('class')
           warning
         @endslot
+        @slot('judul')
+          Peringatan
+        @endslot
         100 data mahasiswa perlu di perbaiki
       @endcomponent
 
@@ -25,12 +28,18 @@
         @slot('class')
           danger
         @endslot
+        @slot('judul')
+          Awas
+        @endslot
         Hari ini deadline laporan perjalanan dinas!
       @endcomponent
 
       @component('layout.alert')
         @slot('class')
           success
+        @endslot
+        @slot('judul')
+          Angin Segar
         @endslot
         Bulan depan cuti panjang...
       @endcomponent
