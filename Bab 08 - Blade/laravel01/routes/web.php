@@ -32,3 +32,8 @@ Route::get('dosen', function() {
 Route::get('gallery', function() {
   return view('gallery');
 })->name('gallery');
+
+Route::get('informasi/{fakultas}/{jurusan}', function($fakultas,$jurusan) {
+  $data = [$fakultas,$jurusan];
+  return view('informasi')->with('data',$data);
+})->name('info');

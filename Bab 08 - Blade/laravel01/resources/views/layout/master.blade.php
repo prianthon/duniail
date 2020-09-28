@@ -20,6 +20,9 @@
       <li class="nav-item">
         <a class="nav-link" href="{{route('gallery')}}">Gallery</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/informasi/Ekonomi/Manajemen">Info</a>
+      </li>
     </ul>
   </nav>
 
