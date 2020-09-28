@@ -29,10 +29,6 @@ Route::get('dosen', function() {
   return view('dosen')->with('dosen',$arrDosen);
 });
 
-Route::get('gallery', function() {
+Route::get('universitas/fmipa/matematika/gallery', function() {
   return view('gallery');
-});
-
-Route::get('admin', function() {
-  return view('admin');
-});
+})->name('gambar');
