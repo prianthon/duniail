@@ -12,13 +12,13 @@
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/mahasiswa">Data Mahasiswa</a>
+        <a class="nav-link" href="{{route('mahasiswa')}}">Data Mahasiswa</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/dosen">Data Dosen</a>
+        <a class="nav-link" href="{{route('dosen')}}">Data Dosen</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{route('gambar')}}">Gallery</a>
+        <a class="nav-link" href="{{route('gallery')}}">Gallery</a>
       </li>
     </ul>
   </nav>
