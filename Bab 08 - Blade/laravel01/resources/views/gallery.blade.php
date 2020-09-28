@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('title','Gallery')
+@section('menuGallery','active')
 
 @section('content')
   <div class="container text-center mt-3 p-4 bg-white">
