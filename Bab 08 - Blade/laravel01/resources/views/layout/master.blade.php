@@ -21,7 +21,7 @@
         <a class="nav-link" href="{{route('gallery')}}">Gallery</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/informasi/Ekonomi/Manajemen">Info</a>
+        <a class="nav-link" href="{{route('info',['fakultas'=>'FMIPA','jurusan'=>'Matematika'])}}">Info</a>
       </li>
     </ul>
   </nav>
