@@ -1,5 +1,7 @@
-@include('layout.header',['title' => 'Gallery'])
+@extends('layout.master')
+@section('title','Gallery')
 
+@section('content')
   <div class="container text-center mt-3 p-4 bg-white">
     <h1>Gallery</h1>
     <div class="row">
@@ -29,5 +31,4 @@
     </div>
     </div>
   </div>
-
-@include('layout.footer')
+@endsection
