@@ -14,33 +14,15 @@
   <div class="row">
     <div class="col-12">
 
-      @component('layout.alert')
-        @slot('class')
-          warning
-        @endslot
-        @slot('judul')
-          Peringatan
-        @endslot
+      @component('layout.alert',['class'=>'warning','judul'=>'Peringatan'])
         100 data mahasiswa perlu di perbaiki
       @endcomponent
 
-      @component('layout.alert')
-        @slot('class')
-          danger
-        @endslot
-        @slot('judul')
-          Awas
-        @endslot
+      @component('layout.alert',['class'=>'danger','judul'=>'Awas'])
         Hari ini deadline laporan perjalanan dinas!
       @endcomponent
 
-      @component('layout.alert')
-        @slot('class')
-          success
-        @endslot
-        @slot('judul')
-          Angin Segar
-        @endslot
+      @component('layout.alert',['class'=>'success','judul'=>'Kabar Baik'])
         Bulan depan cuti panjang...
       @endcomponent
 
