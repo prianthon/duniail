@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','Data Mahasiswa')
+{{--@section('title','Data Mahasiswa')--}}
 @section('menuMahasiswa','active')
 
 @section('content')
