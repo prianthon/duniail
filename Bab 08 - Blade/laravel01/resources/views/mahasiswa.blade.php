@@ -11,19 +11,14 @@
   <div class="container text-center mt-3 pt-3 bg-white">
     <h1 class="bg-dark px-3 py-1 text-white d-inline-block">{{$nama}}</h1>
     <br>
-    @forelse ($nilai as $val)
-      @if (($val >= 0) and ($val < 50))
-        <div class="alert alert-danger d-inline-block">
-          {{$val}}
-        </div>
-      @elseif (($val >= 50) and ($val <= 100))
-        <div class="alert alert-success d-inline-block">
-          {{$val}}
-        </div>
+    @foreach ($nilai as $val)
+      @if ($val < 50)
+        @continue
       @endif
-      @empty
-        <div class="alert alert-dark d-inline-block">Tidak ada data...</div>
-    @endforelse
+      <div class="alert alert-success d-inline-block">
+        {{$val}}
+      </div>
+    @endforeach
   </div>
 </body>
 </html>
