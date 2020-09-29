@@ -30,6 +30,7 @@
 
   <footer class="bg-dark py-4 text-white mt-4">
     <div class="container">
+      <a href="{{ url('informasi/FMIPA/Matematika')}}">Jurusan Matematika</a> | 
       Sistem Informasi Mahasiswa | Copyright © {{ date("Y") }} Duniailkom
     </div>
   </footer>
