@@ -6,10 +6,12 @@ class PageController extends Controller
 {
   public function index()
   {
-    return "Halaman Home";
+    return view('welcome');
   }
   public function tampil()
   {
-    return "Data Mahasiswa";
+    $arrMahasiswa = ["Risa Lestari","Rudi Hermawan","Bambang Kusumo","Lisa Permata"];
+
+    return view('mahasiswa')->with('mahasiswa',$arrMahasiswa);
   }
 }
