@@ -1,3 +1,9 @@
+/* Set warna background untuk tag body */
+
+body {
+  background-color: beige;
+}
+
 /* Set warna background dan teks untuk tag <h1> */
 
 h1 {
