@@ -1,5 +1,5 @@
-// Tampilkan alert ketika halaman di klik
+// Tampilkan pupover Bootstrap
 
-window.addEventListener('click', function() {
-  alert('Saya di klik');
-});
+$(function() {
+  $('[data-toggle="popover"]').popover()
+})

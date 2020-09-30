@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="{{ mix('/css/my-app.css') }}">
 </head>
 <body>
-  <h1>Belajar Laravel</h1>
+  <div class="container text-center py-5">
+    <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Lagi serius ..." data-content="Buku Laravel Uncover TOP Banget!">Belajar Laravel</button>
+  </div>
   <script src="{{ mix('/js/my-app.js') }}"></script>
 </body>
 </html>
