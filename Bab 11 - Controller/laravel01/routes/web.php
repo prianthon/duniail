@@ -17,5 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/','PageController@index');
-Route::get('/mahasiswa','PageController@tampil');
+Route::get('/','Admin\PageController@index');
+Route::get('/mahasiswa','Admin\PageController@tampil');
