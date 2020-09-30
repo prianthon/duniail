@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::get('/','Admin\PageController@index');
 Route::get('/mahasiswa','Admin\PageController@tampil');
+Route::get('/coba-facade','Admin\PageController@cobaFacade');
