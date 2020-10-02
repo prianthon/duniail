@@ -18,6 +18,11 @@ class CollectionController extends Controller
 
       // Cara pendefinisian collection dengan helper function collect()
       $collection = collect([1, 9, 3, 4, 5, 3, 5, 7]);
+
+      // Cetak struktur detail variabel
+      echo "<pre>";
+      var_dump($collection);
+      echo "</pre>";
     }
 
     public function collectionDua()
