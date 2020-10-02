@@ -34,13 +34,16 @@ class CollectionController extends Controller
       $collection = collect([1, 9, 3, 4, 5, 3, 5, 7]);
 
       // Akses isi collection secara individu
-      echo $collection[0]; echo "<br>";
-      echo $collection[2]; echo "<br>";
+      //echo $collection[0]; echo "<br>";
+      //echo $collection[2]; echo "<br>";
 
       // Akses isi collection menggunakan perulangan foreach
-      foreach($collection as $value) {
-        echo "$value";
-      }
+      //foreach($collection as $value) {
+      //  echo "$value";
+      //}
+
+      // Langsung men-echo collection
+      echo $collection;
     }
 
     public function collectionTiga()
