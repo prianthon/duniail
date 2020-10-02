@@ -48,20 +48,34 @@ class CollectionController extends Controller
       //echo "<hr>";
 
       // Collection dari berbagai tipe data
-      $collection = collect(["belajar", "laravel", "uncover", 1, 2, 3]);
-      echo $collection; // ["belajar","laravel","uncover",1,2,3]
+      //$collection = collect(["belajar", "laravel", "uncover", 1, 2, 3]);
+      //echo $collection; // ["belajar","laravel","uncover",1,2,3]
 
-      echo "<br>";
+      //echo "<br>";
 
       // Collection dari associative array
-      $collection = collect([
-        "nama" => "Laura",
-        "sekolah" => "SMA 5 Lampung",
-        "kota" => "Lampung",
-        "jurusan" => "IPA",
-      ]);
+      //$collection = collect([
+      //  "nama" => "Laura",
+      //  "sekolah" => "SMA 5 Lampung",
+      //  "kota" => "Lampung",
+      //  "jurusan" => "IPA",
+      //]);
 
-      echo $collection; // {"nama":"Laura","sekolah":"SMA 5 Lampung","kota":"Lampung","jurusan":"IPA"}
+      //echo $collection; // {"nama":"Laura","sekolah":"SMA 5 Lampung","kota":"Lampung","jurusan":"IPA"}
+
+      // Percobaan beda antara array biasa dengan associative array
+      $varA = [1,2,3];
+      $varB = ["0"=>1, "1"=>2, "2"=>3];
+
+      dump($varA===$varB); // true
+
+      $varA = collect([1,2,3]);
+      $varB = collect(["1"=>1, "2"=>2, "3"=>3]);
+
+      echo $varA; // [1,2,3]
+      echo "<br>";
+      echo $varB; // {"1":1,"2":2,"3":3}
+      
     }
 
     public function collectionTiga()
