@@ -140,7 +140,11 @@ class CollectionController extends Controller
       //dump( $collection->get('sekolah') ); // SMA 5 Lampung
 
       // Ambil nilai berdasarkan key. Jika tidak ditemukan, kembalikan nilai di argument kedua
-      dump( $collection->get('umur', 17) ); // 17"
+      //dump( $collection->get('umur', 17) ); // 17"
+
+      // Cek apakah ada key tertentu
+      dump( $collection->has('jurusan') ); // true
+      dump( $collection->has('umur') ); // false
     }
 
     public function collectionLima()
