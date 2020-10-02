@@ -121,7 +121,10 @@ class CollectionController extends Controller
       //dump( $collection->last() ); // 7
 
       // Hitung jumlah element
-      dump( $collection->count() ); // 8
+      //dump( $collection->count() ); // 8
+
+      // Urutkan element di collection
+      echo $collection->sort(); // {"0":1,"2":3,"5":3,"3":4,"4":5,"6":5,"7":7,"1":9}
     }
 
     public function collectionEmpat()
