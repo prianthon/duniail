@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Str;
 
 class PageController extends Controller
 {
@@ -11,14 +10,15 @@ class PageController extends Controller
   {
     return "Halaman Home Admin";
   }
+
   public function tampil()
   {
     return "Data Mahasiswa Admin";
   }
-  public function cobaFacade()
+
+  public function cobaClass()
   {
-    echo Str::snake('SedangBelajarLaravelUncover');
-    echo "<br>";
-    echo Str::kebab('SedangBelajarLaravelUncover');
+    $foo = new \App\Http\Controllers\Coba\Foo();
+    echo $foo->bar();
   }
 }
