@@ -11,6 +11,10 @@ class CollectionController extends Controller
       // Cara pendefinisian collection dengan membuat object Collection
       $myArray = [1, 9, 3, 4, 5, 3, 5, 7];
       $collection = new \Illuminate\Support\Collection($myArray);
+
+      // Cara pendefinisian collection dengan helper function collect()
+      $myArray = [1, 9, 3, 4, 5, 3, 5, 7];
+      $collection = collect($myArray);
     }
 
     public function collectionDua()
