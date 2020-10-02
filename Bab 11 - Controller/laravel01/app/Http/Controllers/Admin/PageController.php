@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Coba\Foo;
 
 class PageController extends Controller
 {
@@ -18,7 +19,10 @@ class PageController extends Controller
 
   public function cobaClass()
   {
-    $foo = new \App\Http\Controllers\Coba\Foo();
+    // $foo = new \App\Http\Controllers\Coba\Foo();
+    // echo $foo->bar();
+
+    $foo = new Foo();
     echo $foo->bar();
   }
 }
