@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class PageController extends Controller
 {
@@ -16,8 +17,8 @@ class PageController extends Controller
   }
   public function cobaFacade()
   {
-    echo \Illuminate\Support\Str::snake('SedangBelajarLaravelUncover');
+    echo Str::snake('SedangBelajarLaravelUncover');
     echo "<br>";
-    echo \Illuminate\Support\Str::kebab('SedangBelajarLaravelUncover');
+    echo Str::kebab('SedangBelajarLaravelUncover');
   }
 }
