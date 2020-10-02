@@ -129,7 +129,18 @@ class CollectionController extends Controller
 
     public function collectionEmpat()
     {
-      //... isi method collectionEmpat
+      $collection = collect([
+        "nama" => "Laura",
+        "sekolah" => "SMA 5 Lampung",
+        "kota" => "Lampung",
+        "jurusan" => "IPA",
+      ]);
+
+      // Ambil nilai berdasarkan key
+      //dump( $collection->get('sekolah') ); // SMA 5 Lampung
+
+      // Ambil nilai berdasarkan key. Jika tidak ditemukan, kembalikan nilai di argument kedua
+      dump( $collection->get('umur', 17) ); // 17"
     }
 
     public function collectionLima()
