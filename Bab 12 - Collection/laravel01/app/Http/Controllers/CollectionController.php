@@ -102,7 +102,10 @@ class CollectionController extends Controller
 
       // Filter dan tampilkan element yang tidak berulang (unik)
       // $collection = collect(["0"=>1,"1"=>9,"2"=>3,"3"=>4,"4"=>5,"6"=>5,"7"=>7]);
-      echo $collection->unique(); // {"0":1,"1":9,"2":3,"3":4,"4":5,"7":7}
+      //echo $collection->unique(); // {"0":1,"1":9,"2":3,"3":4,"4":5,"7":7}
+
+      // Ambil semua nilai collection menjadi array
+      dump( $collection->all() ); // [1, 9, 3, 4, 5, 3, 5, 7]
     }
 
     public function collectionEmpat()
