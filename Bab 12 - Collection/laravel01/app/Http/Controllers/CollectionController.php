@@ -108,11 +108,17 @@ class CollectionController extends Controller
       //dump( $collection->all() ); // [1, 9, 3, 4, 5, 3, 5, 7]
 
       // Percobaan beda hasil dump() antara collection dan array
-      $varA = [1,2,3];
-      $varB = collect([1,2,3]);
+      //$varA = [1,2,3];
+      //$varB = collect([1,2,3]);
 
-      dump($varA);
-      dump($varB);
+      //dump($varA);
+      //dump($varB);
+
+      // Ambil element pertama dari collection
+      dump( $collection->first() ); // 1
+
+      // Ambil element terakhir dari collection
+      dump( $collection->last() ); // 7
     }
 
     public function collectionEmpat()
