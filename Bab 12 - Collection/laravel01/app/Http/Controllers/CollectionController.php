@@ -105,7 +105,14 @@ class CollectionController extends Controller
       //echo $collection->unique(); // {"0":1,"1":9,"2":3,"3":4,"4":5,"7":7}
 
       // Ambil semua nilai collection menjadi array
-      dump( $collection->all() ); // [1, 9, 3, 4, 5, 3, 5, 7]
+      //dump( $collection->all() ); // [1, 9, 3, 4, 5, 3, 5, 7]
+
+      // Percobaan beda hasil dump() antara collection dan array
+      $varA = [1,2,3];
+      $varB = collect([1,2,3]);
+
+      dump($varA);
+      dump($varB);
     }
 
     public function collectionEmpat()
