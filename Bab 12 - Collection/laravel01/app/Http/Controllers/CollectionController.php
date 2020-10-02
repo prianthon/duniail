@@ -8,7 +8,9 @@ class CollectionController extends Controller
 {
     public function collectionSatu()
     {
-      //... isi method collectionSatu
+      // Cara pendefinisian collection dengan membuat object Collection
+      $myArray = [1, 9, 3, 4, 5, 3, 5, 7];
+      $collection = new \Illuminate\Support\Collection($myArray);
     }
 
     public function collectionDua()
