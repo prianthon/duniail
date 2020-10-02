@@ -83,11 +83,14 @@ class CollectionController extends Controller
       $collection = collect([1, 9, 3, 4, 5, 3, 5, 7]);
 
       // Method Matematis
-      dump( $collection->sum() ); // 37
-      dump( $collection->avg() ); // 4.625
-      dump( $collection->max() ); // 9
-      dump( $collection->min() ); // 1
-      dump( $collection->median() ); // 4.5
+      //dump( $collection->sum() ); // 37
+      //dump( $collection->avg() ); // 4.625
+      //dump( $collection->max() ); // 9
+      //dump( $collection->min() ); // 1
+      //dump( $collection->median() ); // 4.5
+
+      // Mengambil 1 element acak dari collection
+      dump( $collection->random() ); // 5
     }
 
     public function collectionEmpat()
