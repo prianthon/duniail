@@ -93,7 +93,12 @@ class CollectionController extends Controller
       //dump( $collection->random() );
 
       // Menambah element baru ke dalam collection
-      echo $collection->concat([10,11,12]); // [1,9,3,4,5,3,5,7,10,11,12]
+      //echo $collection->concat([10,11,12]); // [1,9,3,4,5,3,5,7,10,11,12]
+
+      // Cek apakah angka 3 ada di dalam collection
+      dump( $collection->contains(3) ); // true
+      // Cek apakah angka 8 ada di dalam collection
+      dump( $collection->contains(8) ); // false
     }
 
     public function collectionEmpat()
