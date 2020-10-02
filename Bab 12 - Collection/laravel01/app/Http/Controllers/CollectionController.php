@@ -31,7 +31,7 @@ class CollectionController extends Controller
     public function collectionDua()
     {
       // Cara pendefinisian collection dengan helper function collect()
-      $collection = collect([1, 9, 3, 4, 5, 3, 5, 7]);
+      //$collection = collect([1, 9, 3, 4, 5, 3, 5, 7]);
 
       // Akses isi collection secara individu
       //echo $collection[0]; echo "<br>";
@@ -43,7 +43,25 @@ class CollectionController extends Controller
       //}
 
       // Langsung men-echo collection
-      echo $collection;
+      //echo $collection;
+
+      //echo "<hr>";
+
+      // Collection dari berbagai tipe data
+      $collection = collect(["belajar", "laravel", "uncover", 1, 2, 3]);
+      echo $collection; // ["belajar","laravel","uncover",1,2,3]
+
+      echo "<br>";
+
+      // Collection dari associative array
+      $collection = collect([
+        "nama" => "Laura",
+        "sekolah" => "SMA 5 Lampung",
+        "kota" => "Lampung",
+        "jurusan" => "IPA",
+      ]);
+
+      echo $collection; // {"nama":"Laura","sekolah":"SMA 5 Lampung","kota":"Lampung","jurusan":"IPA"}
     }
 
     public function collectionTiga()
