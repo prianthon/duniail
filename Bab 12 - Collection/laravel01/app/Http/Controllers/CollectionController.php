@@ -115,10 +115,13 @@ class CollectionController extends Controller
       //dump($varB);
 
       // Ambil element pertama dari collection
-      dump( $collection->first() ); // 1
+      //dump( $collection->first() ); // 1
 
       // Ambil element terakhir dari collection
-      dump( $collection->last() ); // 7
+      //dump( $collection->last() ); // 7
+
+      // Hitung jumlah element
+      dump( $collection->count() ); // 8
     }
 
     public function collectionEmpat()
