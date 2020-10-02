@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/satu','CollectionController@collectionSatu');
+Route::get('/dua','CollectionController@collectionDua');
+Route::get('/tiga','CollectionController@collectionTiga');
+Route::get('/empat','CollectionController@collectionEmpat');
+Route::get('/lima','CollectionController@collectionLima');
+Route::get('/enam','CollectionController@collectionEnam');
+Route::get('/exercise','CollectionController@exercise');
