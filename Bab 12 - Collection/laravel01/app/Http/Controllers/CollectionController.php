@@ -158,7 +158,13 @@ class CollectionController extends Controller
       //dump( $collection->forget('sekolah') );
 
       // Balik isi collection, yakni key menjadi value dan value menjadi key
-      dump( $collection->flip() );
+      //dump( $collection->flip() );
+
+      // Ambil semua key
+      dump( $collection->keys() );
+
+      // Ambil semua value
+      dump( $collection->values() );
     }
 
     public function collectionLima()
