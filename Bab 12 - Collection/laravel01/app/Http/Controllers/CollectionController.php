@@ -143,8 +143,16 @@ class CollectionController extends Controller
       //dump( $collection->get('umur', 17) ); // 17"
 
       // Cek apakah ada key tertentu
-      dump( $collection->has('jurusan') ); // true
-      dump( $collection->has('umur') ); // false
+      //dump( $collection->has('jurusan') ); // true
+      //dump( $collection->has('umur') ); // false
+
+      // Ganti isi collection
+      $hasil = $collection->replace([
+        'sekolah' => 'SMK 2 Palembang',
+        'kota' => 'Palembang'
+      ]);
+
+      dump( $hasil );
     }
 
     public function collectionLima()
