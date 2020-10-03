@@ -147,12 +147,15 @@ class CollectionController extends Controller
       //dump( $collection->has('umur') ); // false
 
       // Ganti isi collection
-      $hasil = $collection->replace([
-        'sekolah' => 'SMK 2 Palembang',
-        'kota' => 'Palembang'
-      ]);
+      //$hasil = $collection->replace([
+      //  'sekolah' => 'SMK 2 Palembang',
+      //  'kota' => 'Palembang'
+      //]);
 
-      dump( $hasil );
+      //dump( $hasil );
+
+      // Hapus isi collection
+      dump( $collection->forget('sekolah') );
     }
 
     public function collectionLima()
