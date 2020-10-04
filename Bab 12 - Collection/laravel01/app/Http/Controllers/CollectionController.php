@@ -302,7 +302,11 @@ class CollectionController extends Controller
       //echo "$siswa->nama, $siswa->sekolah, $siswa->jurusan"; // Rudi, MA Al Hidayah, IPS
 
       // Sortir siswa berdasarkan jurusan
-      $hasil = $siswas->groupBy('jurusan');
-      dump($hasil);
+      //$hasil = $siswas->groupBy('jurusan');
+      //dump($hasil);
+
+      // Tampilkan nama mahasiswa jurusan IPA
+      $namaJurusanIpa = $siswas->groupBy('jurusan')->get('IPA')->pluck('nama')->all();
+      echo 'Nama siswa jurusan IPA: '.implode(', ',$namaJurusanIpa);
     }
 }
