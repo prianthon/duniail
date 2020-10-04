@@ -337,8 +337,20 @@ class CollectionController extends Controller
       //dump($matkuls);
 
       // Tampilkan daftar mata kuliah di semester 3, menggunakan implode
-      $matkulsSem3 = $matkuls->groupBy('semester')->get(3)->pluck('namaMatkul')->all();
-      echo 'Nama mata kuliah di semester 3: '.implode(', ',$matkulsSem3);
+      //$matkulsSem3 = $matkuls->groupBy('semester')->get(3)->pluck('namaMatkul')->all();
+      //echo 'Nama mata kuliah di semester 3: '.implode(', ',$matkulsSem3);
+      //echo "<hr>";
+
+      // Tampilkan daftar mata kuliah di semester 3, menggunakan foreach
+      $matkulsSem3 = $matkuls->where('semester',3);
+
+      $stringMatkul = "";
+      foreach($matkulsSem3 as $matkul) {
+        $stringMatkul .= $matkul->namaMatkul.", ";
+      }
+
+      echo 'Nama mata kuliah di semester 3: '.substr($stringMatkul,0,-2);
+
       echo "<hr>";
     }
 }
