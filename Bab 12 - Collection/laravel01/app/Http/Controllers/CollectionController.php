@@ -190,7 +190,12 @@ class CollectionController extends Controller
         ['namaProduk' => 'Speaker C', 'harga' => '350000'],
       ]);
 
-      dump( $collection );
+      //dump( $collection );
+
+      // Urutkan berdasarkan key harga
+      dump( $collection->sortBy('harga') );
+      // Urutkan berdasarkan key harga
+      dump( $collection->sortByDesc('harga') );
     }
 
     public function collectionEnam()
