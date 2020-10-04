@@ -161,10 +161,13 @@ class CollectionController extends Controller
       //dump( $collection->flip() );
 
       // Ambil semua key
-      dump( $collection->keys() );
+      //dump( $collection->keys() );
 
       // Ambil semua value
-      dump( $collection->values() );
+      //dump( $collection->values() );
+
+      // Cari element collection dengan nilai 'IPA', lalu kembalikan key yang berisi nilai tersebut
+      dump( $collection->search('IPA') );
     }
 
     public function collectionLima()
