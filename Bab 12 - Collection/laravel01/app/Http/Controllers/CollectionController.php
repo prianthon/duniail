@@ -240,7 +240,7 @@ class CollectionController extends Controller
       // Cari element dengan harga selain 1599000, 2999000, 3999000
       //dump( $collection->whereNotIn('harga', [1599000, 2999000, 3999000]) );
 
-      // Ambil namaProduk dari semua element
+      // Ambil namaProduk dari semua element method pluck
       dump( $collection->pluck('namaProduk') );
     }
 
