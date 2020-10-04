@@ -220,8 +220,15 @@ class CollectionController extends Controller
       //echo $hasil['namaProduk']."<br>"; // Speaker C
 
       // Tampilkan nama produk yang element key harga bernilai 350000
-      $hasil = $collection->firstWhere('harga', 350000);
-      echo $hasil['namaProduk']."<br>"; // Speaker C
+      //$hasil = $collection->firstWhere('harga', 350000);
+      //echo $hasil['namaProduk']."<br>"; // Speaker C
+
+      // Tampilkan nama produk yang element key harga lebih dari 1000000
+      $hasil = $collection->where('harga','>=',1000000)->all();
+      echo "<hr>";
+      foreach($hasil as $val) {
+        echo $val['namaProduk']."<br>";
+      }
     }
 
     public function collectionEnam()
