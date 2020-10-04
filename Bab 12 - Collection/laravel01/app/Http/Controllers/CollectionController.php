@@ -211,9 +211,13 @@ class CollectionController extends Controller
       //dump( $hasil );
 
       // Cari element yang key harga bernilai 350000
-      dump( $collection->where('harga', 350000) );
+      //dump( $collection->where('harga', 350000) );
       // Tampilkan nama produk yang element key harga lebih dari 1000000
-      dump( $collection->where('harga', '>=', 1000000) );
+      //dump( $collection->where('harga', '>=', 1000000) );
+
+      // Tampilkan nama produk yang element key harga bernilai 350000
+      $hasil = $collection->where('harga', 350000)->first();
+      echo $hasil['namaProduk']."<br>"; // Speaker C
     }
 
     public function collectionEnam()
