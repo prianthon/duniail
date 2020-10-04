@@ -352,5 +352,13 @@ class CollectionController extends Controller
       echo 'Nama mata kuliah di semester 3: '.substr($stringMatkul,0,-2);
 
       echo "<hr>";
+
+      // Urutkan mata kuliah berdasarkan jumlah sks, lalu tampilkan sebagai string.
+      $matkulsSort = $matkuls->sortByDesc('jumlahSks');
+      $stringMatkul = "";
+      foreach($matkulsSort as $matkult) {
+        $stringMatkul .= "$matkult->namaMatkul ($matkult->jumlahSks), ";
+      }
+      echo 'Nama mata kuliah: '.substr($stringMatkul,0,-2);
     }
 }
