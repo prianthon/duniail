@@ -236,9 +236,12 @@ class CollectionController extends Controller
       //dump( $collection->whereNotBetween('harga', [100000, 2000000]) );
 
       // Cari element dengan harga 1599000, 2999000 atau 3999000
-      dump( $collection->whereIn('harga', [1599000, 2999000, 3999000]) );
+      //dump( $collection->whereIn('harga', [1599000, 2999000, 3999000]) );
       // Cari element dengan harga selain 1599000, 2999000, 3999000
-      dump( $collection->whereNotIn('harga', [1599000, 2999000, 3999000]) );
+      //dump( $collection->whereNotIn('harga', [1599000, 2999000, 3999000]) );
+
+      // Ambil namaProduk dari semua element
+      dump( $collection->pluck('namaProduk') );
     }
 
     public function collectionEnam()
