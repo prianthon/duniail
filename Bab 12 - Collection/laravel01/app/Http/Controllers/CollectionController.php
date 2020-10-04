@@ -167,7 +167,19 @@ class CollectionController extends Controller
       //dump( $collection->values() );
 
       // Cari element collection dengan nilai 'IPA', lalu kembalikan key yang berisi nilai tersebut
-      dump( $collection->search('IPA') );
+      //dump( $collection->search('IPA') );
+
+      // Method each sebagai bentuk lain dari foreach
+      $collection->each(function ($val, $key) {
+        echo "$key: $val <br>";
+      });
+
+      echo "<hr>";
+
+      // Sama dengan kode berikut
+      foreach( $collection as $key => $val ) {
+        echo "$key = $val <br>";
+      }
     }
 
     public function collectionLima()
