@@ -224,11 +224,16 @@ class CollectionController extends Controller
       //echo $hasil['namaProduk']."<br>"; // Speaker C
 
       // Tampilkan nama produk yang element key harga lebih dari 1000000
-      $hasil = $collection->where('harga','>=',1000000)->all();
-      echo "<hr>";
-      foreach($hasil as $val) {
-        echo $val['namaProduk']."<br>";
-      }
+      //$hasil = $collection->where('harga','>=',1000000)->all();
+      //echo "<hr>";
+      //foreach($hasil as $val) {
+      //  echo $val['namaProduk']."<br>";
+      //}
+
+      // Cari element dengan harga antara 100000 - 2000000
+      dump( $collection->whereBetween('harga', [100000, 2000000]) );
+      // Cari element dengan harga bukan di antara 100000 - 2000000
+      dump( $collection->whereNotBetween('harga', [100000, 2000000]) );
     }
 
     public function collectionEnam()
