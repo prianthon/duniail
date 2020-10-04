@@ -246,6 +246,27 @@ class CollectionController extends Controller
 
     public function collectionEnam()
     {
-      //... isi method collectionEnam
+      $siswa00 = new \stdClass();
+      $siswa00->nama = "Rian";
+      $siswa00->sekolah = "SMK Pelita Ibu";
+      $siswa00->jurusan = "IPA";
+
+      $siswa01 = new \stdClass();
+      $siswa01->nama = "Nova";
+      $siswa01->sekolah = "SMA 2 Kota Baru";
+      $siswa01->jurusan = "IPA";
+
+      $siswa02 = new \stdClass();
+      $siswa02->nama = "Rudi";
+      $siswa02->sekolah = "MA Al Hidayah";
+      $siswa02->jurusan = "IPS";
+
+      $siswas = collect([
+        0 => $siswa00,
+        1 => $siswa01,
+        2 => $siswa02,
+      ]);
+
+      dump( $siswas );
     }
 }
