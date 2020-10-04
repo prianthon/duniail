@@ -298,7 +298,11 @@ class CollectionController extends Controller
       //dump($siswa);
 
       // Tampilkan data siswa dengan key 2
-      $siswa = $siswas->get(2);
-      echo "$siswa->nama, $siswa->sekolah, $siswa->jurusan"; // Rudi, MA Al Hidayah, IPS 
+      //$siswa = $siswas->get(2);
+      //echo "$siswa->nama, $siswa->sekolah, $siswa->jurusan"; // Rudi, MA Al Hidayah, IPS
+
+      // Sortir siswa berdasarkan jurusan
+      $hasil = $siswas->groupBy('jurusan');
+      dump($hasil);
     }
 }
