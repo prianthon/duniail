@@ -184,7 +184,13 @@ class CollectionController extends Controller
 
     public function collectionLima()
     {
-      //... isi method collectionLima
+      $collection = collect([
+        ['namaProduk' => 'Laptop A', 'harga'=> '59990000'],
+        ['namaProduk' => 'Smartphone B', 'harga'=> '1599000'],
+        ['namaProduk' => 'Speaker C', 'harga' => '350000'],
+      ]);
+
+      dump( $collection );
     }
 
     public function collectionEnam()
