@@ -270,17 +270,21 @@ class CollectionController extends Controller
       //dump( $siswas );
 
       // Cara mengakses nilai collection
-      echo $siswas[0]->nama;
-      echo "<br>";
-      echo $siswas[2]->sekolah;
+      //echo $siswas[0]->nama;
+      //echo "<br>";
+      //echo $siswas[2]->sekolah;
 
-      echo "<hr>";
+      //echo "<hr>";
 
       // Perulangan foreach untuk menampilkan data
-      foreach($siswas as $siswa) {
-        echo $siswa->nama; echo "<br>";
-      }
+      //foreach($siswas as $siswa) {
+      //  echo $siswa->nama; echo "<br>";
+      //}
 
-      echo "<hr>";
+      //echo "<hr>";
+
+      // Tampilkan nama sekolah dari siswa bernama Nova
+      $siswa = $siswas->where('nama','Nova')->first();
+      echo $siswa->sekolah; // SMA 2 Kota Baru 
     }
 }
