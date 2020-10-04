@@ -294,7 +294,11 @@ class CollectionController extends Controller
       // echo $siswa[1]->sekolah;
 
       // Percobaan jika pakai first
-      $siswa = $siswas->where('nama','Nova')->first();
-      dump($siswa);
+      //$siswa = $siswas->where('nama','Nova')->first();
+      //dump($siswa);
+
+      // Tampilkan data siswa dengan key 2
+      $siswa = $siswas->get(2);
+      echo "$siswa->nama, $siswa->sekolah, $siswa->jurusan"; // Rudi, MA Al Hidayah, IPS 
     }
 }
