@@ -216,7 +216,11 @@ class CollectionController extends Controller
       //dump( $collection->where('harga', '>=', 1000000) );
 
       // Tampilkan nama produk yang element key harga bernilai 350000
-      $hasil = $collection->where('harga', 350000)->first();
+      //$hasil = $collection->where('harga', 350000)->first();
+      //echo $hasil['namaProduk']."<br>"; // Speaker C
+
+      // Tampilkan nama produk yang element key harga bernilai 350000
+      $hasil = $collection->firstWhere('harga', 350000);
       echo $hasil['namaProduk']."<br>"; // Speaker C
     }
 
