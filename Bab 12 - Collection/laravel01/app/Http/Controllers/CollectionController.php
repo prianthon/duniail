@@ -334,6 +334,11 @@ class CollectionController extends Controller
 
       $matkuls = collect([$matkul00, $matkul01, $matkul02, $matkul03]);
 
-      dump($matkuls);
+      //dump($matkuls);
+
+      // Tampilkan daftar mata kuliah di semester 3, menggunakan implode
+      $matkulsSem3 = $matkuls->groupBy('semester')->get(3)->pluck('namaMatkul')->all();
+      echo 'Nama mata kuliah di semester 3: '.implode(', ',$matkulsSem3);
+      echo "<hr>";
     }
 }
