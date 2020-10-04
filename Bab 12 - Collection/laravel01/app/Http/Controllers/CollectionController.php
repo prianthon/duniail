@@ -198,11 +198,17 @@ class CollectionController extends Controller
       //dump( $collection->sortByDesc('harga') );
 
       // Urutkan berdasarkan key harga dan tampilkan sebagai array
-      dump( $collection->sortBy('harga')->all() );
+      //dump( $collection->sortBy('harga')->all() );
       // Urutkan berdasarkan key harga dan tampilkan menggunakan method each()
-      $collection->sortBy('harga')->each(function($val,$key) {
-        echo $val['namaProduk']."<br>";
+      //$collection->sortBy('harga')->each(function($val,$key) {
+      //  echo $val['namaProduk']."<br>";
+      //});
+
+      // Filter untuk mengambil element collection dengan harga < 2000000
+      $hasil = $collection->filter(function ($val, $key) {
+        return $val['harga'] < 2000000;
       });
+      dump( $hasil );
     }
 
     public function collectionEnam()
