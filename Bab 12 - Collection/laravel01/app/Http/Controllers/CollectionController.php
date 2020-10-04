@@ -205,10 +205,15 @@ class CollectionController extends Controller
       //});
 
       // Filter untuk mengambil element collection dengan harga < 2000000
-      $hasil = $collection->filter(function ($val, $key) {
-        return $val['harga'] < 2000000;
-      });
-      dump( $hasil );
+      //$hasil = $collection->filter(function ($val, $key) {
+      //  return $val['harga'] < 2000000;
+      //});
+      //dump( $hasil );
+
+      // Cari element yang key harga bernilai 350000
+      dump( $collection->where('harga', 350000) );
+      // Tampilkan nama produk yang element key harga lebih dari 1000000
+      dump( $collection->where('harga', '>=', 1000000) );
     }
 
     public function collectionEnam()
