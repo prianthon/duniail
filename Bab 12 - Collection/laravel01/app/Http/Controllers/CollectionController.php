@@ -267,6 +267,20 @@ class CollectionController extends Controller
         2 => $siswa02,
       ]);
 
-      dump( $siswas );
+      //dump( $siswas );
+
+      // Cara mengakses nilai collection
+      echo $siswas[0]->nama;
+      echo "<br>";
+      echo $siswas[2]->sekolah;
+
+      echo "<hr>";
+
+      // Perulangan foreach untuk menampilkan data
+      foreach($siswas as $siswa) {
+        echo $siswa->nama; echo "<br>";
+      }
+
+      echo "<hr>";
     }
 }
