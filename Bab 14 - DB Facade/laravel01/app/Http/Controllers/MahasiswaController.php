@@ -44,4 +44,9 @@ class MahasiswaController extends Controller
       ]);
       dump($result);
     }
+
+    public function update() {
+      $result = DB::update('UPDATE mahasiswas SET created_at = now(), updated_at = now() WHERE nim = ?', ['19003036']);
+      dump($result);
+    }
 }
