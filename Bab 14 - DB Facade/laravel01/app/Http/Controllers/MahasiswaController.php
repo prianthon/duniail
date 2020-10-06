@@ -81,4 +81,9 @@ class MahasiswaController extends Controller
     );
     return view('tampil-mahasiswa',['mahasiswas' => $result]);
     }
+
+    public function statement() {
+      $result = DB::statement('TRUNCATE mahasiswas');
+      return('Tabel mahasiswas sudah dikosongkan');
+    }
 }
