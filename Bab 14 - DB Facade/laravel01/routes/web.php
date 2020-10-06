@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MahasiswaController@index');
+Route::get('/insert-sql', 'MahasiswaController@insertSql');
+Route::get('/insert-timestamp', 'MahasiswaController@insertTimestamp');
+Route::get('/insert-prepared', 'MahasiswaController@insertPrepared');
+Route::get('/insert-named-binding', 'MahasiswaController@insertNamedBinding');
+Route::get('/update', 'MahasiswaController@update');
+Route::get('/delete', 'MahasiswaController@delete');
+Route::get('/select', 'MahasiswaController@select');
+Route::get('/select-tampil', 'MahasiswaController@selectTampil');
+Route::get('/select-view', 'MahasiswaController@selectView');
+Route::get('/select-where', 'MahasiswaController@selectWhere');
+Route::get('/statement', 'MahasiswaController@statement');
