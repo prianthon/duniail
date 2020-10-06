@@ -55,4 +55,9 @@ class MahasiswaController extends Controller
     );
     dump($result);
     }
+
+    public function select() {
+      $result = DB::select('SELECT * FROM mahasiswas');
+      dump($result);
+    }
 }
