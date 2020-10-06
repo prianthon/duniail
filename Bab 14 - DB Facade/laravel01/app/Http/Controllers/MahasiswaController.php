@@ -60,4 +60,14 @@ class MahasiswaController extends Controller
       $result = DB::select('SELECT * FROM mahasiswas');
       dump($result);
     }
+
+    public function selectTampil() {
+      $result = DB::select('SELECT * FROM mahasiswas');
+
+      echo($result[0]->id). '<br>';
+      echo($result[0]->nim). '<br>';
+      echo($result[0]->nama). '<br>';
+      echo($result[0]->tanggal_lahir). '<br>';
+      echo($result[0]->ipk);
+    }
 }
