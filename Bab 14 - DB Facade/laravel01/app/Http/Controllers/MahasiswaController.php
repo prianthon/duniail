@@ -70,4 +70,9 @@ class MahasiswaController extends Controller
       echo($result[0]->tanggal_lahir). '<br>';
       echo($result[0]->ipk);
     }
+
+    public function selectView() {
+      $result = DB::select('SELECT * FROM mahasiswas');
+      return view('tampil-mahasiswa',['mahasiswas'=>$result]);
+    }
 }
