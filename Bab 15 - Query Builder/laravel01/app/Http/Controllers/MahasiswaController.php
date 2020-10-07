@@ -46,4 +46,50 @@ class MahasiswaController extends Controller
 
       dump($result);
     }
+
+    public function update(){
+      $result = DB::table('mahasiswas')->where('nama','Sari Citra Lestari')->update(
+        [
+          'tanggal_lahir' => '2002-01-01',
+          'ipk' => 3.19,
+          'updated_at' => now(),
+        ]
+      );
+
+      dump($result);
+    }
+
+    public function updateWhere(){
+      $result = DB::table('mahasiswas')->where('ipk','<',3)->where('nama','<>','alex')->update(
+        [
+          'tanggal_lahir' => '2002-01-01',
+          'updated_at' => now(),
+        ]
+      );
+
+      dump($result);
+    }
+
+    public function updateOrInsert(){
+      $result = DB::table('mahasiswas')->updateOrInsert(
+        [
+          'nim' => '19005011',
+        ],
+        [
+          'nama' => 'Riana Putria',
+          'tanggal_lahir' => '2000-11-23',
+          'ipk' => 2.7,
+          'created_at' => now(),
+          'updated_at' => now(),
+        ]
+      );
+
+      dump($result);
+    }
+
+    public function delete(){
+      $result = DB::table('mahasiswas')->where('ipk','>=',3.4)->delete();
+
+      dump($result);
+    }
 }
