@@ -92,4 +92,25 @@ class MahasiswaController extends Controller
 
       dump($result);
     }
+
+    public function get(){
+      $result = DB::table('mahasiswas')->get();
+
+      dump($result);
+    }
+
+    public function getTampil(){
+      $result = DB::table('mahasiswas')->get();
+
+      echo($result[0]->id). '<br>';
+      echo($result[0]->nim). '<br>';
+      echo($result[0]->nama). '<br>';
+      echo($result[0]->tanggal_lahir). '<br>';
+      echo($result[0]->ipk);
+    }
+
+    public function getView(){
+      $result = DB::table('mahasiswas')->get();
+      return view('tampil-mahasiswa',['mahasiswas' => $result]);
+    }
 }
