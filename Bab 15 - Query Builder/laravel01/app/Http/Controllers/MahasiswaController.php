@@ -113,4 +113,59 @@ class MahasiswaController extends Controller
       $result = DB::table('mahasiswas')->get();
       return view('tampil-mahasiswa',['mahasiswas' => $result]);
     }
+
+    public function getWhere(){
+      $result = DB::table('mahasiswas')->where('ipk','<','3')->orderBy('nama','desc')->get();
+
+      return view('tampil-mahasiswa',['mahasiswas' => $result]);
+    }
+
+    public function select(){
+      $result = DB::table('mahasiswas')->select('nim','nama as nama_mahasiswa')->get();
+
+      dump($result);
+    }
+
+    public function take(){
+      $result = DB::table('mahasiswas')->orderBy('nama','asc')->skip(1)->take(2)->get();
+
+      return view('tampil-mahasiswa',['mahasiswas' => $result]);
+    }
+
+    public function first(){
+      $result = DB::table('mahasiswas')->where('nama','James Situmorang')->first();
+
+      //dump($result); // ini bukan array dari object, tapi langsung object saja
+
+      // ini akan error
+      //return view('tampil-mahasiswa',['mahasiswas' => $result]);
+
+      // Seharusnya dijalankan sebagai berikut
+      return view('tampil-mahasiswa',['mahasiswas' => [$result]]);
+    }
+
+    public function find(){
+      //$result = DB::table('mahasiswas')->find(8);
+      $result = DB::table('mahasiswas')->where('id',8)->first();
+      return view('tampil-mahasiswa',['mahasiswas' => [$result]]);
+    }
+
+    public function raw(){
+      $result = DB::table('mahasiswas')->selectRaw('count(*) as total_mahasiswa')->get();
+
+      echo($result[0]->total_mahasiswa). '<br>';
+    }
+
+    public function index(){
+      $result = DB::table('mahasiswas')->select('nim','nama')->get();
+      return view('index-mahasiswa',['mahasiswas' => $result]);
+    }
+
+    public function mahasiswa($nim){
+      //return $nim;
+
+      $result = DB::table('mahasiswas')->where('nim',$nim)->get();
+      return view('tampil-mahasiswa',['mahasiswas'=>$result]);
+    }
+
 }
