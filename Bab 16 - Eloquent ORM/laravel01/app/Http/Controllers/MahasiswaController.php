@@ -68,4 +68,50 @@ class MahasiswaController extends Controller
       );
       dump($mahasiswa3);
     }
+
+    public function update(){
+      $mahasiswa = Mahasiswa::find(1);
+      $mahasiswa->tanggal_lahir = '2001-01-01';
+      $mahasiswa->ipk = 2.9;
+      $mahasiswa->save();
+
+      dump($mahasiswa);
+    }
+
+    public function updateWhere(){
+      $mahasiswa = Mahasiswa::where('nim','19003036')->first();
+      $mahasiswa->tanggal_lahir = '2001-12-31';
+      $mahasiswa->ipk = 4.0;
+      $mahasiswa->save();
+
+      dump($mahasiswa);
+    }
+
+    public function massUpdate(){
+      Mahasiswa::where('nim','19003036')->first()->update([
+        'tanggal_lahir' => '2000-04-20',
+        'ipk' => 2.1
+      ]);
+      return "Berhasil di proses";
+    }
+
+    public function delete(){
+      $mahasiswa = Mahasiswa::find(1);
+      $mahasiswa->delete();
+
+      dump($mahasiswa);
+      // error jika mahasiswa tidak ditemukan
+    }
+
+    public function destroy(){
+      $mahasiswa = Mahasiswa::destroy(1);
+      dump($mahasiswa);
+      // tidak error jika mahasiswa tidak ditemukan
+      // bisa juga seperti ini: Mahasiswa::destroy([3,9,10]);
+    }
+
+    public function massDelete(){
+      $mahasiswa = Mahasiswa::where('ipk','>',2)->delete();
+      dump($mahasiswa);
+    }
 }
