@@ -188,4 +188,24 @@ class MahasiswaController extends Controller
       $mahasiswa = Mahasiswa::orderBy('ipk')->skip(1)->take(3)->get();
       return view('tampil-mahasiswa',['mahasiswas'=>$mahasiswa]);
     }
+
+    public function softDelete(){
+      Mahasiswa::where('nim','18012012')->delete();
+      return "Berhasil di hapus";
+    }
+
+    public function withTrashed(){
+      $mahasiswas = Mahasiswa::withTrashed()->get();
+      return view('tampil-mahasiswa',['mahasiswas'=>$mahasiswas]);
+    }
+
+    public function restore(){
+      Mahasiswa::withTrashed()->where('nim','18012012')->restore();
+      return "Berhasil di restore";
+    }
+
+    public function forceDelete(){
+      Mahasiswa::where('nim','19005011')->forceDelete();
+      return "Berhasil di hapus secara permanen";
+    }
 }
