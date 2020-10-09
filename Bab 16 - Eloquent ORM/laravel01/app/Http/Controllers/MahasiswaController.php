@@ -114,4 +114,78 @@ class MahasiswaController extends Controller
       $mahasiswa = Mahasiswa::where('ipk','>',2)->delete();
       dump($mahasiswa);
     }
+
+    public function all(){
+      $result = Mahasiswa::all();
+      //dump($result);
+
+      //echo($result[0]->id). '<br>';
+      //echo($result[0]->nim). '<br>';
+      //echo($result[0]->nama). '<br>';
+      //echo($result[0]->tanggal_lahir). '<br>';
+      //echo($result[0]->ipk);
+
+      foreach($result as $mahasiswa){
+        echo($mahasiswa->id). '<br>';
+        echo($mahasiswa->nim). '<br>';
+        echo($mahasiswa->nama). '<br>';
+        echo($mahasiswa->tanggal_lahir). '<br>';
+        echo($mahasiswa->ipk). '<br>';
+        echo "<hr>";
+      }
+    }
+
+    public function allView(){
+      $mahasiswas = Mahasiswa::all();
+      return view('tampil-mahasiswa',['mahasiswas'=>$mahasiswas]);
+    }
+
+    public function getWhere() {
+      $mahasiswas = Mahasiswa::where('ipk','<','3')->orderBy('nama','desc')->get();
+
+      return view('tampil-mahasiswa',['mahasiswas' => $mahasiswas]);
+    }
+
+    public function testWhere(){
+      $mahasiswa = Mahasiswa::where('nim','18012012')->get();
+
+      dump($mahasiswa);
+    }
+
+    public function first(){
+      //$mahasiswa = Mahasiswa::where('nim','18012012')->first();
+
+      //dump($mahasiswa);
+
+      // Perbandingan antara hasil collection dengan object
+      //$mahasiswa = Mahasiswa::where('nim','18012012')->get();
+      //echo $mahasiswa[0]->nama; // James Situmorang
+
+      //$mahasiswa = Mahasiswa::where('nim','18012012')->first();
+      //echo $mahasiswa->nama; // James Situmorang
+
+      $mahasiswa = Mahasiswa::where('ipk','<','3')->first();
+      return view('tampil-mahasiswa',['mahasiswas'=>[$mahasiswa]]);
+    }
+
+    public function find(){
+      $mahasiswa = Mahasiswa::find(8);
+      return view('tampil-mahasiswa',['mahasiswas'=>[$mahasiswa]]);
+    }
+
+    public function latest(){
+      $mahasiswa = Mahasiswa::latest()->get();
+      return view('tampil-mahasiswa',['mahasiswas'=>$mahasiswa]);
+    }
+
+    public function limit(){
+      //$mahasiswa = Mahasiswa::latest()->limit(2)->get();
+      $mahasiswa = Mahasiswa::orderBy('created_at','desc')->limit(2)->get();
+      return view('tampil-mahasiswa',['mahasiswas'=>$mahasiswa]);
+    }
+
+    public function skipTake(){
+      $mahasiswa = Mahasiswa::orderBy('ipk')->skip(1)->take(3)->get();
+      return view('tampil-mahasiswa',['mahasiswas'=>$mahasiswa]);
+    }
 }
