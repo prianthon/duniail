@@ -15,7 +15,8 @@
         <h1>Pendaftaran Mahasiswa</h1>
         <hr>
 
-        <form action="{{url('/proses-form')}}" method="GET">
+        <form action="{{url('/proses-form')}}" method="POST">
+          @csrf 
           <div class="form-group">
             <label for="nim">NIM</label>
             <input type="text" class="form-control" id="nim" name="nim">
