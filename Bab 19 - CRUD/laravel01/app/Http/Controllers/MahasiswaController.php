@@ -43,4 +43,13 @@ class MahasiswaController extends Controller
 
       return "Data berhasil diinput ke database";
     }
+
+    public function show($mahasiswa)
+    {
+      //dd($mahasiswa);
+
+      //$result = Mahasiswa::find($mahasiswa);
+      $result = Mahasiswa::findOrFail($mahasiswa);
+      return view('mahasiswa.show',['mahasiswa' => $result]);
+    }
 }
