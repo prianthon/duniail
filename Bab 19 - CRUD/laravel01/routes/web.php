@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/mahasiswas','MahasiswaController@index')->name('mahasiswas.index');
+
+Route::get('/mahasiswas/create','MahasiswaController@create')->name('mahasiswas.create');
+
+Route::post('/mahasiswas','MahasiswaController@store')->name('mahasiswas.store');
