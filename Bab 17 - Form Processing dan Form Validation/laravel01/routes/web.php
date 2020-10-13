@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','MahasiswaController@index');
 Route::post('/proses-form','MahasiswaController@prosesForm');
 Route::post('/proses-form-validator','MahasiswaController@prosesFormValidator');
+Route::post('/proses-form-request','MahasiswaController@prosesFormRequest');
