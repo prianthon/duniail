@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mahasiswa;
 
 class MahasiswaController extends Controller
 {
     public function index()
     {
-      return "Tabel mahasiswa di sini";
+      $mahasiswas = Mahasiswa::all();
+      return view('mahasiswa.index',['mahasiswas' => $mahasiswas]);
     }
 
     public function create()
@@ -26,6 +28,19 @@ class MahasiswaController extends Controller
         'alamat'          => '',
       ]);
 
-      dump($validateData);
+      //dump($validateData);
+
+      //$mahasiswa = new Mahasiswa();
+      //$mahasiswa->nim = $validateData['nim'];
+      //$mahasiswa->nama = $validateData['nama'];
+      //$mahasiswa->jenis_kelamin = $validateData['jenis_kelamin'];
+      //$mahasiswa->jurusan = $validateData['jurusan'];
+      //$mahasiswa->alamat = $validateData['alamat'];
+      //$mahasiswa->save();
+
+      // mass assignment
+      Mahasiswa::create($validateData);
+
+      return "Data berhasil diinput ke database";
     }
 }
