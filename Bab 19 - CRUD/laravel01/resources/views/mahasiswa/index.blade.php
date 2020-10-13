@@ -13,8 +13,11 @@
     <div class="row">
       <div class="col-12">
 
-        <div class="py-4">
-          <h2>Tabel Mahasiswa</h2>
+        <div class="py-4 d-flex justify-content-end align-items-center">
+          <h2 class="mr-auto">Tabel Mahasiswa</h2>
+          <a href="{{ route('mahasiswas.create') }}" class="btn btn-primary">
+            Tambah Mahasiswa
+          </a>
         </div>
 
         <table class="table table-striped">
@@ -32,7 +35,8 @@
             @forelse($mahasiswas as $mahasiswa)
               <tr>
                 <th>{{$loop->iteration}}</th>
-                <td>{{$mahasiswa->nim}}</td>
+                <!--<td><a href="{{route('mahasiswas.show',['mahasiswa' => $mahasiswa->id]) }}">{{$mahasiswa->nim}}</a></td>-->
+                <td><a href="{{ url('/mahasiswas/'.$mahasiswa->id) }}">{{$mahasiswa->nim}}</a></td>
                 <td>{{$mahasiswa->nama}}</td>
                 <td>{{$mahasiswa->jenis_kelamin == 'P' ? 'Perempuan':'Laki-laki'}}</td>
                 <td>{{$mahasiswa->jurusan}}</td>
