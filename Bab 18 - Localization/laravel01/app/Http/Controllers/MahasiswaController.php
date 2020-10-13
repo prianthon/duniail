@@ -12,4 +12,18 @@ class MahasiswaController extends Controller
       App::setLocale($locale);
       return view('form-pendaftaran');
     }
+
+    public function prosesForm(Request $request)
+    {
+        $validateData = $request->validate([
+            'nim'           => 'required|size:8',
+            'nama'          => 'required|min:3|max:50',
+            'email'         => 'required|email',
+            'jenis_kelamin' => 'required|in:P,L',
+            'jurusan'       => 'required',
+            'alamat'        => '',
+        ]);
+
+        dump($validateData);
+    }
 }

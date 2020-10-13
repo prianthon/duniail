@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/form-pendaftaran/{locale?}','MahasiswaController@formPendaftaran');
+Route::post('/proses-form','MahasiswaController@prosesForm');
