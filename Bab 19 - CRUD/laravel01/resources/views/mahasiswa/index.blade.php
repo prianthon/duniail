@@ -1,3 +1,4 @@
+{{--}}{{ session()->get('pesan') }}--}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,12 @@
             Tambah Mahasiswa
           </a>
         </div>
+
+        @if(session()->has('pesan'))
+          <div class="alert alert-success">
+            {{ session()->get('pesan') }}
+          </div>
+        @endif
 
         <table class="table table-striped">
           <thead>

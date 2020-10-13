@@ -41,7 +41,18 @@ class MahasiswaController extends Controller
       // mass assignment
       Mahasiswa::create($validateData);
 
-      return "Data berhasil diinput ke database";
+      //return "Data berhasil diinput ke database";
+
+      // Untuk Percobaan
+      //$request->session()->flash('pesan','Penambahan data berhasil');
+
+      // Cara 1
+      //$request->session()->flash('pesan',"Penambahan data {$validateData['nama']} berhasil");
+
+      //return redirect()->route('mahasiswas.index');
+
+      // Cara 2
+      return redirect()->route('mahasiswas.index')->with('pesan',"Penambahan data {$validateData['nama']} berhasil");
     }
 
     public function show(Mahasiswa $mahasiswa)
