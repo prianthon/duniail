@@ -81,7 +81,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <!--{{ __('test.judul') }}-->
+                    <!--@lang('test.judul')-->
+                    @lang('test.home.judul')
                 </div>
 
                 <div class="links">
