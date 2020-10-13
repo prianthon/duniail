@@ -3,11 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
 
 class MahasiswaController extends Controller
 {
     public function formPendaftaran()
     {
+      return view('form-pendaftaran');
+    }
+
+    public function formPendaftaranId()
+    {
+      App::setLocale('id');
+      return view('form-pendaftaran');
+    }
+
+    public function formPendaftaranEn()
+    {
+      App::setLocale('en');
       return view('form-pendaftaran');
     }
 
