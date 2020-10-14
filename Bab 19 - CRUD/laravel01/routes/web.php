@@ -24,3 +24,5 @@ Route::get('/mahasiswas/{mahasiswa}','MahasiswaController@show')->name('mahasisw
 Route::get('/mahasiswas/{mahasiswa}/edit','MahasiswaController@edit')->name('mahasiswas.edit');
 
 Route::patch('/mahasiswas/{mahasiswa}','MahasiswaController@update')->name('mahasiswas.update');
+
+Route::delete('/mahasiswa/{mahasiswa}','MahasiswaController@destroy')->name('mahasiswas.destroy');
