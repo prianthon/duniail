@@ -57,7 +57,8 @@ class FileUploadController extends Controller
       // Nama file upload di generate dari nama user + time() seperti nama file asal
       $extFile = $request->berkas->getClientOriginalExtension();
       $namaFile = 'lisa-'.time().".".$extFile;
-      $path = $request->berkas->storeAs('uploads',$namaFile);
+      //$path = $request->berkas->storeAs('uploads',$namaFile);
+      $path = $request->berkas->storeAs('public',$namaFile);
 
       echo "Proses upload berhasil, file berada di: $path";
     }
