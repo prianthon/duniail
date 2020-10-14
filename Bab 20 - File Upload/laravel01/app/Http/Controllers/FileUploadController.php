@@ -60,6 +60,10 @@ class FileUploadController extends Controller
       //$path = $request->berkas->storeAs('uploads',$namaFile);
       $path = $request->berkas->storeAs('public',$namaFile);
 
-      echo "Proses upload berhasil, file berada di: $path";
+      //echo "Proses upload berhasil, file berada di: $path";
+      //echo "Proses upload berhasil, file berada di: storage/$namaFile";
+
+      $pathBaru = asset('storage/'.$namaFile);
+      echo "Proses upload berhasil, file berada di: <a href='$pathBaru'>$pathBaru</a>";
     }
 }
