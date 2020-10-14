@@ -20,3 +20,7 @@ Route::get('/mahasiswas/create','MahasiswaController@create')->name('mahasiswas.
 Route::post('/mahasiswas','MahasiswaController@store')->name('mahasiswas.store');
 
 Route::get('/mahasiswas/{mahasiswa}','MahasiswaController@show')->name('mahasiswas.show');
+
+Route::get('/mahasiswas/{mahasiswa}/edit','MahasiswaController@edit')->name('mahasiswas.edit');
+
+Route::patch('/mahasiswas/{mahasiswa}','MahasiswaController@update')->name('mahasiswas.update');
