@@ -15,7 +15,9 @@ class CobaMiddleware
      */
     public function handle($request, Closure $next)
     {
-        dd('CobaMiddleware aktif');
+        if (time() % 2 == 0) {
+          return redirect('/tabel-mahasiswa');
+        }
         return $next($request);
     }
 }
