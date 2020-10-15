@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/file-upload','FileUploadController@fileUpload');
 Route::post('/file-upload','FileUploadController@prosesFileUpload');
+
+Route::get('/file-upload-rename','FileUploadController@fileUploadRename');
+Route::post('/file-upload-rename','FileUploadController@prosesFileUploadRename');
