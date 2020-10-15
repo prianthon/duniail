@@ -11,59 +11,20 @@ class FileUploadController extends Controller
     }
 
     public function prosesFileUpload(Request $request){
-      //dump($request->berkas);
 
-      //if($request->hasFile('berkas'))
-      //{
-      //  echo "path(): ".$request->berkas->path();
-      //  echo "<br>";
-      //  echo "extension(): ".$request->berkas->extension();
-      //  echo "<br>";
-      //  echo "getClientOriginalExtension(): ".$request->berkas->getClientOriginalExtension();
-      //  echo "<br>";
-      //  echo "getMimeType(): ".$request->berkas->getMimeType();
-      //  echo "<br>";
-      //  echo "getClientOriginalName(): ".$request->berkas->getClientOriginalName();
-      //  echo "<br>";
-      //  echo "getSize(): ".$request->berkas->getSize();
-      //}
-      //else
-      //{
-      //  echo "Tidak ada berkas yang diupload";
-      //}
-
-      // Validasi required
-      //$request->validate([
-      //  'berkas' => 'required',
-      //]);
-
-      // Validasi tipe data dan maksimum file
       $request->validate([
         'berkas' => 'required|file|image|max:1000',
       ]);
 
-      //echo $request->berkas->getClientOriginalName()."Lolos Validasi";
-
-      // Nama file upload di generate Laravel
-      //$path = $request->berkas->store('uploads');
-
-      // Nama file upload adalah "berkas"
-      //$path = $request->berkas->storeAs('uploads','berkas');
-
-      // Nama file upload sama seperti nama file asal
-      //$namaFile = $request->berkas->getClientOriginalName();
-      //$path = $request->berkas->storeAs('uploads',$namaFile);
-
       // Nama file upload di generate dari nama user + time() seperti nama file asal
       $extFile = $request->berkas->getClientOriginalExtension();
       $namaFile = 'lisa-'.time().".".$extFile;
-      //$path = $request->berkas->storeAs('uploads',$namaFile);
-      $path = $request->berkas->storeAs('public',$namaFile);
 
-      //echo "Proses upload berhasil, file berada di: $path";
-      //echo "Proses upload berhasil, file berada di: storage/$namaFile";
+      // Pindahkan file upload ke public
+      $path = $request->berkas->move('image',$namaFile);
+      echo "Variable path berisi: $path <br>";
 
-      $pathBaru = asset('storage/'.$namaFile);
+      $pathBaru = asset($path);
       echo "Proses upload berhasil, file berada di: <a href='$pathBaru'>$pathBaru</a>";
     }
 }
