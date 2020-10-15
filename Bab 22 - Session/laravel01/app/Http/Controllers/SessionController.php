@@ -74,13 +74,42 @@ class SessionController extends Controller
       }
     }
 
-    public function hapusSession()
+    public function hapusSession(Request $request)
     {
-      //
+      // Menghapus 1 session menggunakan helper function
+      //session()->forget('hakAkses');
+
+      // Menghapus 1 session menggunakan Request object
+      //$request->session()->forget('hakAkses');
+
+      // Menghapus 1 session menggunakan facade Session
+      //Session::forget('hakAkses');
+
+      //echo "Session hakAkses sudah dihapus";
+
+      // Menghapus semua session menggunakan helper function
+      session()->flush();
+
+      // Menghapus semua session menggunakan Request object
+      $request->session()->flush();
+
+      // Menghapus semua session menggunakan facade Session
+      Session::flush();
+
+      echo "Semua session sudah dihapus";
     }
 
-    public function flashSession()
+    public function flashSession(Request $request)
     {
-      //
+      // Membuat 1 flash session menggunakan helper function
+      session()->flash('hakAkses','admin');
+
+      // Membuat 1 flash session menggunakan Request object
+      $request->session()->flash('hakAkses','admin');
+
+      // Membuat 1 flash session menggunakan facade Session
+      Session::flash('hakAkses','admin');
+
+      echo "Flash session hakAkses sudah dibuat";
     }
 }
