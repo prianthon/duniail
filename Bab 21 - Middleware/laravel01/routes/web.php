@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/daftar-mahasiswa','MahasiswaController@daftarMahasiswa')->middleware('coba');
+Route::get('/daftar-mahasiswa','MahasiswaController@daftarMahasiswa');
 Route::get('/tabel-mahasiswa','MahasiswaController@tabelMahasiswa');
-Route::get('/blog-mahasiswa','MahasiswaController@blogMahasiswa')->middleware('coba');
+Route::get('/blog-mahasiswa','MahasiswaController@blogMahasiswa');
