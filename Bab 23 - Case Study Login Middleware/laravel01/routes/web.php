@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/login','MahasiswaController@login');
+Route::post('/login','MahasiswaController@prosesLogin');
+
+Route::get('/logout','MahasiswaController@logout');
+
+Route::redirect('/','/login');
+
+Route::get('/daftar-mahasiswa','MahasiswaController@daftarMahasiswa')->middleware('login');
+Route::get('/tabel-mahasiswa','MahasiswaController@tabelMahasiswa')->middleware('login');
+Route::get('/blog-mahasiswa','MahasiswaController@blogMahasiswa')->middleware('login');
