@@ -24,3 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/daftar-mahasiswa', 'MahasiswaController@daftarMahasiswa')->middleware('auth');
 Route::get('/tabel-mahasiswa', 'MahasiswaController@tabelMahasiswa')->middleware('auth');
 Route::get('/blog-mahasiswa', 'MahasiswaController@blogMahasiswa')->middleware('auth');
+
+Route::get('/','JurusanController@index')->middleware('auth');
+Route::resource('jurusans','JurusanController')->middleware('auth');

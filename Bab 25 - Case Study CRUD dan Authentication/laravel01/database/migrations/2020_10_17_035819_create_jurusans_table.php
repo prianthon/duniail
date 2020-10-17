@@ -15,6 +15,9 @@ class CreateJurusansTable extends Migration
     {
         Schema::create('jurusans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_jurusan');
+            $table->string('nama_dekan');
+            $table->integer('jumlah_mahasiswa');
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class JurusanController extends Controller
      */
     public function index()
     {
-        //
+        return view('jurusan.index',['jurusans'=>Jurusan::all()]);
     }
 
     /**
@@ -24,7 +24,7 @@ class JurusanController extends Controller
      */
     public function create()
     {
-        //
+        return view('jurusan.create');
     }
 
     /**
@@ -35,7 +35,14 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valideData = $request->validate([
+          'nama_jurusan'      => 'required',
+          'nama_dekan'        => 'required',
+          'jumlah_mahasiswa'  => 'required|min:10|integer',
+        ]);
+
+        Jurusan::create($valideData);
+        return redirect('/')->with('pesan',"Jurusan $request->nama_jurusan berhasil ditambahkan");
     }
 
     /**
@@ -46,7 +53,7 @@ class JurusanController extends Controller
      */
     public function show(Jurusan $jurusan)
     {
-        //
+        return view('jurusan.show', compact('jurusan'));
     }
 
     /**
@@ -57,7 +64,7 @@ class JurusanController extends Controller
      */
     public function edit(Jurusan $jurusan)
     {
-        //
+        return view('jurusan.edit',compact('jurusan'));
     }
 
     /**
@@ -69,7 +76,15 @@ class JurusanController extends Controller
      */
     public function update(Request $request, Jurusan $jurusan)
     {
-        //
+        $valideData = $request->validate([
+          'nama_jurusan'        => 'required',
+          'nama_dekan'          => 'required',
+          'jumlah_mahasiswa'    => 'required|min:10|integer',
+        ]);
+
+        $jurusan->update($valideData);
+
+        return redirect('/jurusans/'.$jurusan->id)->with('pesan',"Jurusan $jurusan->nama_jurusan berhasil diupdate");
     }
 
     /**
@@ -80,6 +95,7 @@ class JurusanController extends Controller
      */
     public function destroy(Jurusan $jurusan)
     {
-        //
+        $jurusan->delete();
+        return redirect('/')->with('pesan',"Jurusan->nama_jurusan berhasil dihapus");
     }
 }
