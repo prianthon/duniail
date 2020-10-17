@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/daftar-mahasiswa', 'MahasiswaController@daftarMahasiswa')->middleware('auth');
+Route::get('/tabel-mahasiswa', 'MahasiswaController@tabelMahasiswa')->middleware('auth');
+Route::get('/blog-mahasiswa', 'MahasiswaController@blogMahasiswa')->middleware('auth');
