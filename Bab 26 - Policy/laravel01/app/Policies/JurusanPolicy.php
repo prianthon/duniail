@@ -75,7 +75,8 @@ class JurusanPolicy
      */
     public function delete(User $user, Jurusan $jurusan)
     {
-        //
+        // Hanya user admin@gmail.com saja yang bisa menjalankan proses delete
+        return in_array($user->email,['admin@gmail.com']);
     }
 
     /**
