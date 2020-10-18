@@ -27,3 +27,5 @@ Route::get('/blog-mahasiswa', 'MahasiswaController@blogMahasiswa')->middleware('
 
 Route::get('/','JurusanController@index')->middleware('auth');
 Route::resource('jurusans','JurusanController')->middleware('auth');
+
+Route::get('jurusans/{jurusan}','JurusanController@show')->name('jurusans.show')->middleware('auth')->middleware('can:view,jurusan');

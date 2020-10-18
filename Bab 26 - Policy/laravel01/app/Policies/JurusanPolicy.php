@@ -30,7 +30,8 @@ class JurusanPolicy
      */
     public function view(User $user, Jurusan $jurusan)
     {
-        //
+        // Hanya user admin@gmail.com saja yang bisa melihat detail
+        return in_array($user->email,['admin@gmail.com']);
     }
 
     /**
