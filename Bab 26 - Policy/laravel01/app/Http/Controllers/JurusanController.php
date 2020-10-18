@@ -35,6 +35,9 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
+        // batasi hak akses untuk proses store
+        $this->authorize('create', Jurusan::class);
+        
         $valideData = $request->validate([
           'nama_jurusan'      => 'required',
           'nama_dekan'        => 'required',

@@ -7,7 +7,10 @@
 
         <div class="py-4 d-flex justify-content-end align-items-center">
           <h1 class="h2 mr-auto">Tabel Jurusan</h1>
+          {{-- Hanya user yang berhak bisa melihat menu ini --}}
+          @can('create', App\Jurusan::class)
           <a href="{{url('/jurusans/create')}}" class="btn btn-primary">Tambah Jurusan</a>
+          @endcan
         </div>
 
         @if(session()->has('pesan'))

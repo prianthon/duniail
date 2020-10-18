@@ -32,8 +32,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @auth
                     <ul class="navbar-nav mr-auto">
-                      @auth
                         <li class="nav-item">
                           <a class="nav-link" href="{{url('/daftar-mahasiswa')}}">Daftar Mahasiswa</a>
                         </li>
@@ -46,12 +46,14 @@
                         <li class="nav-item">
                           <a class="nav-link" href="{{url('/')}}">Tabel Jurusan</a>
                         </li>
+                        {{-- Hanya user yang berhak bisa melihat menu ini --}}
+                        @can('create',App\Jurusan::class)
                         <li class="nav-item">
                           <a class="nav-link" href="{{url('/jurusans/create')}}">Tambah Jurusan</a>
                         </li>
-                      @endauth
+                        @endcan
                     </ul>
-
+                    @endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
