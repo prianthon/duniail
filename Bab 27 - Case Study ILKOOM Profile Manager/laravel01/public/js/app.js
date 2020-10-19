@@ -37274,6 +37274,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./my-script */ "./resources/js/my-script.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37318,6 +37320,41 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/my-script.js":
+/*!***********************************!*\
+  !*** ./resources/js/my-script.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* ================================================================
+// Kode untuk menampilkan nama file pada form yang menggunakan
+// custom file upload Bootstrap, dipakai dalam form register dan update
+*/
+$('input[type="file"]').on('change', function () {
+  var filenames = [];
+  var files = document.getElementById('gambar_profil').files;
+
+  for (var i in files) {
+    if (files.hasOwnProperty(i)) {
+      filenames.push(files[i].name);
+    }
+  }
+
+  $(this).next('.custom-file-label').addClass("selected").html(filenames.join(',    '));
+});
+/* ================================================================
+// Kode untuk membuat gambar pilihan background profil bisa dipilih
+// Dipakai dalam form register dan update
+*/
+
+$('.pilihan-background-profil').click(function () {
+  var nomorGambar = this.children[0].innerHTML;
+  $('#background_profil').val(nomorGambar);
+});
 
 /***/ }),
 
