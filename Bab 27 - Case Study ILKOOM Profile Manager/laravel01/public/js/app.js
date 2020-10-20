@@ -37354,6 +37354,19 @@ $('input[type="file"]').on('change', function () {
 $('.pilihan-background-profil').click(function () {
   var nomorGambar = this.children[0].innerHTML;
   $('#background_profil').val(nomorGambar);
+}); // ================================================================
+// Kode utuk menampilkan form modal konfirmasi saat tombol delete di klik
+// Dipakai dalam halaman home
+// Jika tombol Hapus di klik, generate alamat URL untuk proses delete.
+// idHapis disini adalah id user yang akan di delete
+
+$('.btn-hapus').click(function () {
+  var idHapus = $(this).attr('data-id');
+  $("#deleteForm").attr('action', '/users/' + idHapus);
+}); // Jika tombol "Ya, Hapus" di klik, submit form
+
+$('#deleteForm [type="submit"]').click(function () {
+  $("#deleteForm").submit();
 });
 
 /***/ }),
