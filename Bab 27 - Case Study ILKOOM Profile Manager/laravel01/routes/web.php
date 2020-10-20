@@ -17,8 +17,11 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/users/{user}/edit', 'UserController@edit');
+Route::get('/users/{user}/edit', 'UserController@edit')
+->middleware('can:update,user');
 
-Route::patch('/users/{user}', 'UserController@update');
+Route::patch('/users/{user}', 'UserController@update')
+->middleware('can:update,user');
 
-Route::delete('/users/{user}', 'UserController@destroy');
+Route::delete('/users/{user}', 'UserController@destroy')
+->middleware('can:delete,user');
